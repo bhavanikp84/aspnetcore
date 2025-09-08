@@ -1,8 +1,10 @@
 pipeline {
-    agent any
+    agent {
+       docker { image 'mcr.microsoft.com/dotnet/sdk:8.0' }
+    }
 
     environment {
-        DOTNET_VERSION = '6.0' // Set the version of the .NET SDK you're using
+        DOTNET_VERSION = '8.0' // Set the version of the .NET SDK you're using
         BUILD_DIR = 'build' // Define the build directory
     }
 
